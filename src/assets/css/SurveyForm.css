@@ -1,0 +1,67 @@
+.container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;  
+    flex-direction: column;
+    padding: 20px;
+    line-height: 2;
+    background-color: #D8BFD8;
+    height: 100vh;
+}
+
+.container h1{
+    color:#2e59e7 ;
+}
+
+.form-container{
+    width: 60%;
+    height: auto;
+    text-align: left;
+    margin: 10px 50px;
+    padding: 20px;
+    background: url('https://wellbalancedmama.com/wp-content/uploads/2020/03/shutterstock_467205302-scaled.jpg')  0% 5%;
+    background-color: white;
+    border-radius: 15px;
+    
+}
+
+
+.form-container input{
+    width: 80%;
+    height: 40px;
+    margin-bottom: 20px;
+    padding-left: 10px;
+    border-radius: 5px;
+}
+
+.form-container select{
+    width: 80%;
+    height: 40px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.form-btn{
+    margin: 10px 0;
+}
+
+.form-btn button{
+    background-color: #2e59e7;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+}
+
+.form-container p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    width: 80%;
+}
+
+.hidden{
+    display: none;
+}
+
+
+/* E6F7F8  #D8BFD8     4A90E2*/
