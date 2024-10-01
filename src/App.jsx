@@ -6,6 +6,9 @@ import Signup from './assets/authentication/Signup.jsx';
 import Signin from './assets/authentication/Signin.jsx';
 import ProtectedRoute from './assets/authentication/ProtectedRoute.jsx';
 import BehaviorAnalysis from './assets/BehaviorAnalysis.jsx';
+import Logout from './assets/authentication/Logout.jsx';
+import WeeklyReport from './assets/WeeklyReport.jsx';
+import WeeklyReports from './assets/WeeklyReports.jsx';
 
 
 const App = () => {
@@ -18,7 +21,9 @@ const App = () => {
         <Routes>
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
+        <Route path='/logout' element={<Logout />} />
         <Route path='/behavior-analysis' element={<BehaviorAnalysis />} />
+        <Route path='/weekly-reports' element={<WeeklyReports />} />
         <Route
           path="/survey"
           element={
@@ -27,6 +32,11 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route path='/weekly-report' element={
+          <ProtectedRoute>
+          <WeeklyReport />
+          </ProtectedRoute>
+        } />
       </Routes>
       </div>
   );

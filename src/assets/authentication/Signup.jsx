@@ -63,7 +63,7 @@
 
 import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { auth, db } from '../config/firebase';
 import { addDoc, collection } from 'firebase/firestore';
 import "../css/Auth.css"  // Assuming this CSS file contains the styles you shared.
@@ -115,7 +115,7 @@ const Signup = () => {
                                 </div>
                                 <div className="hr"></div>
                                 <div className="foot-lnk">
-                                    <label htmlFor="tab-1"> <Link to="/signin">Already a Member?</Link> </label>
+                                    <label htmlFor="tab-1"> <NavLink className="foot-lnk-nav" to="/signin">Already a Member?</NavLink> </label>
                                 </div>
                             </form>
                         </div>

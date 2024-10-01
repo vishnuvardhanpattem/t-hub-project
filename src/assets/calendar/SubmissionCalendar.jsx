@@ -59,31 +59,35 @@ const SubmissionCalendar = ({ currentUser }) => {
   const [submissions, setSubmissions] = useState([]);
 
   useEffect(() => {
+    console.log("currentUser Sc: ", currentUser);
     const fetchSubmissions = async () => {
       if (!currentUser) return;
-
-      const q = query(
-        collection(db, 'users'),
-        where('userId', '==', currentUser.uid)
-      );
-      const snapshot = await getDocs(q);
-      const submissionData = snapshot.docs.map(doc => doc.data());
-
-      // Extract submission dates from Firebase data
-      const submissionDates = submissionData.map(sub => sub.date); // Assuming date is stored as 'YYYY-MM-DD'
-      setSubmissions(submissionDates);
+      const emailKey = currentUser.email.replace(/[\.\#\[\]]/g, '_'); 
+      const submissionsRef = collection(db, 'users-status', emailKey, 'submissions');
+  
+      try {
+        const snapshot = await getDocs(submissionsRef);
+        const submissionData = snapshot.docs.map(doc => doc.data());
+        console.log("submissionData: ", submissionData);
+  
+        const submissionDates = submissionData.map(sub => sub.date);
+        setSubmissions(submissionDates);
+        console.log("Submission Dates: ", submissionDates);
+      } catch (error) {
+        console.error("Error fetching submissions: ", error);
+      }
     };
-
+  
     fetchSubmissions();
   }, [currentUser]);
+  
 
   const tileContent = ({ date, view }) => {
     if (view === 'month') {
-      const dateString = date.toISOString().split('T')[0]; // Format the date as 'YYYY-MM-DD'
+      const dateString = date.toISOString().split('T')[0]; 
       
-      // Check if the current date is in the submission dates
       if (submissions.includes(dateString)) {
-        return <span className="tick-mark">✔️</span>; // Add a tick mark on submission dates
+        return <span className="tick-mark">✔</span>; 
       }
     }
     return null;
@@ -93,7 +97,7 @@ const SubmissionCalendar = ({ currentUser }) => {
     const dateString = date.toISOString().split('T')[0];
 
     if (submissions.includes(dateString)) {
-      return 'highlight'; // Add a special class to highlight submission dates
+      return 'highlight'; 
     }
   };
 

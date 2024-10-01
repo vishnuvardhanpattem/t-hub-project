@@ -62,7 +62,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import { auth } from '../config/firebase';
 import "../css/Auth.css" // Assuming this CSS file contains the styles you shared.
 
@@ -85,6 +85,7 @@ const Signin = () => {
       await signInWithEmailAndPassword(auth, email, password);
       navigate('/survey');
     } catch (error) {
+      alert(error.message);
       console.error('Error signing in:', error);
     }
   };
@@ -119,7 +120,7 @@ const Signin = () => {
                 </div>
                 <div className="hr"></div>
                 <div className="foot-lnk">
-                  <a href="#forgot">Forgot Password?</a>
+                  <NavLink className="foot-lnk-nav">Forgot Password?</NavLink>
                 </div>
               </form>
             </div>
