@@ -6,7 +6,8 @@
     flex-direction: column;
     padding: 20px;
     line-height: 2;
-    background-color: #D8BFD8;
+    /* background-color: #D8BFD8; */
+    background:linear-gradient(to left, rgba(245, 246, 252, 0.52), #d8bfd8), url('https://wellbalancedmama.com/wp-content/uploads/2020/03/shutterstock_467205302-scaled.jpg')  0% 5%;
     height: 100vh;
 }
 

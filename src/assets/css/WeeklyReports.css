@@ -1,0 +1,23 @@
+.weekly-report-container{
+    max-width: 100vw;
+    min-height: 100vh;
+    margin-top: 20px;
+}
+
+.weekly-report-sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 2;
+}
+
+.weekly-report-gen{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+    line-height: 2;
+}

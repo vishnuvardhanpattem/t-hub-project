@@ -13,7 +13,7 @@
 }
 
 .highlight {
-  background-color: #ff5722; /* Custom highlight color */
+  background-color: #ff5722; 
   color: white;
 }
 
@@ -62,8 +62,9 @@ button:hover {
 .highlight {
   background-color: gold !important;
   color: white;
-  border-radius: 100%;
+  /* border-radius: 100%; */
   font-weight: 900;
+
 }
 
 /* Tick mark style */

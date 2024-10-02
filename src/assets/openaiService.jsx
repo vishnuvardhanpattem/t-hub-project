@@ -5,7 +5,7 @@ import axios from 'axios';
 const geminiAPIKey = 'AIzaSyAwEKkw9757Qf7ykQPFFpbvHf2jOcs8d_I'; // Replace with your actual Gemini API key
 
 
-export const getAffirmation = async ({mood}) => {
+export const getAffirmation = async ({prompt}) => {
   try {
     const response = await axios.post(
       `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${geminiAPIKey}`,
@@ -14,7 +14,7 @@ export const getAffirmation = async ({mood}) => {
           {
             parts: [
               {
-                text: `Generate a positive affirmation for someone feeling ${mood}.`
+                text: prompt
               }
             ]
           }

@@ -9,6 +9,8 @@ import BehaviorAnalysis from './assets/BehaviorAnalysis.jsx';
 import Logout from './assets/authentication/Logout.jsx';
 import WeeklyReport from './assets/WeeklyReport.jsx';
 import WeeklyReports from './assets/WeeklyReports.jsx';
+import Navbar from './assets/navbar/Navbar.jsx';
+import HomePage from './assets/navbar/HomePage.jsx';
 
 
 const App = () => {
@@ -18,7 +20,9 @@ const App = () => {
           <Route path="/"  element={<SurveyForm />} />
           <Route path="/weekly-report" element={<WeeklyReport />} />
         </Routes> */}
+        <Navbar />
         <Routes>
+        <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/signin" element={<Signin />} />
         <Route path='/logout' element={<Logout />} />
